@@ -19,9 +19,6 @@ if (isset($id)) {
 
 	$date = new DateTime();
 	$date = $date->format('Y-m-d');
-// 	echo $start;
-// 	echo $date;
-	
 
 	if ($start > $date) {
 		$del=$pdo->prepare("DELETE FROM bookings WHERE `unique_token` = ?;");
@@ -35,7 +32,6 @@ if (isset($id)) {
 		}
 	} else {
 		$msg = "<h3>You cannot cancel this booking :(</h3>";
-// 		echo $date;
 	}
 	
 	
@@ -110,7 +106,7 @@ if (isset($id)) {
 
 	if ($msg == "OK") {
 
-			$admin = 'admin@booking.com'; //Admin Email Here
+		$admin = 'admin@booking.com'; //Admin Email Here
 	        $subject = "Cancelled Registration";
 	         
 	        $message = '<img src="https://booking.com/logo.png" height="70" style="display: block; margin: auto;" alt="Logo">';
